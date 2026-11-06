@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.0xmortuex/structdiff-mcp",
+  "description": "Semantic diffs of JSON, YAML, TOML, CSV, .env and INI: what changed by path, keyed list matching, RFC 6902 patches.",
+  "repository": {
+    "url": "https://github.com/0xmortuex/structdiff-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "structdiff-mcp",
+      "version": "0.1.0",
+      "transport": { "type": "stdio" }
+    }
+  ]
+}

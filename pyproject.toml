@@ -1,0 +1,45 @@
+[project]
+name = "structdiff-mcp"
+version = "0.1.0"
+description = "MCP server for semantic diffs of JSON, YAML, TOML, CSV, .env and INI: what changed by path, ignoring key order and formatting, with keyed list matching and RFC 6902 patches."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "0xmortuex" }]
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=2.0.0",
+    "pyyaml>=6.0",
+    "tomli>=2.0; python_version < '3.11'",
+]
+keywords = ["mcp", "diff", "json", "yaml", "toml", "csv", "json-patch", "config", "ai-agent"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Utilities",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "anyio", "hypothesis>=6", "jsonpatch>=1.33", "types-PyYAML"]
+
+[project.urls]
+Homepage = "https://github.com/0xmortuex/structdiff-mcp"
+
+[project.scripts]
+structdiff-mcp = "structdiff_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/structdiff_mcp"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
